@@ -119,9 +119,9 @@ footer p{opacity:.8;margin:8px 0 24px}
 </footer>
 <script>
 document.getElementById('copy').addEventListener('click',function(){
-  var e=this.dataset.email,s=document.getElementById('status');
-  function ok(){s.textContent='Email copied: '+e}
-  function fail(){s.textContent='Copy failed. Email: '+e}
+  var b=this, e=b.dataset.email, old='Copy email';
+  function ok(){b.textContent='Copied!';setTimeout(function(){b.textContent=old},2000)}
+  function fail(){b.textContent='Copy failed';setTimeout(function(){b.textContent=old},2000)}
   try{navigator.clipboard.writeText(e).then(ok,fail)}catch(x){fail()}
 });
 </script>
