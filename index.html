@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Your Name – UI/UX Designer</title>
+<style>
+:root{--bg:#f5f7fa;--surface:#fff;--ink:#12203a;--muted:#55627a;--line:#d9dfe9;--accent:#1f5eff;--accent-ink:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1524;--surface:#16203a;--ink:#eaf0ff;--muted:#9fb0cf;--line:#2a3857;--accent:#6c93ff;--accent-ink:#0e1524}}
+:root[data-theme="dark"]{--bg:#0e1524;--surface:#16203a;--ink:#eaf0ff;--muted:#9fb0cf;--line:#2a3857;--accent:#6c93ff;--accent-ink:#0e1524}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+.hero{padding:64px 0 32px}
+.hero h1{font-size:clamp(2.2rem,7vw,3.8rem);max-width:16ch}
+.hero p{margin-top:18px;color:var(--muted);font-size:1.15rem;max-width:50ch}
+.project{padding:40px 0;border-top:1px solid var(--line)}
+.project h2{font-size:clamp(1.5rem,4vw,2rem)}
+.niche{color:var(--accent);font-weight:600;margin:4px 0 16px}
+.frame{position:relative;aspect-ratio:16/9;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:grid;place-items:center;color:var(--muted);text-align:center;padding:16px}
+.frame video{position:absolute;inset:0;width:100%;height:100%;background:#000;object-fit:contain}
+.info{display:grid;gap:12px;margin-top:20px}
+.info p b{display:block;font-size:.9rem;color:var(--muted)}
+.meta{color:var(--muted);font-size:.95rem}
+footer{background:var(--ink);color:var(--bg);margin-top:40px;padding:56px 0 40px}
+footer h2{font-size:2rem}
+footer p{opacity:.8;margin:8px 0 24px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:10px;font:600 1rem inherit;font-family:inherit;text-decoration:none;border:2px solid var(--bg);background:var(--bg);color:var(--ink);cursor:pointer}
+.btn.alt{background:transparent;color:var(--bg);border-color:rgba(255,255,255,.4)}
+#status{margin-top:20px;font-size:.95rem}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <section class="hero">
+    <h1>Hi, I'm Your Name. I design digital products people can use.</h1>
+    <p>UI/UX designer. Watch a screen recording of each project below.</p>
+  </section>
+
+  <!-- To add a recording: put your video file next to this page and change the src below. -->
+  <section class="project">
+    <h2>Project name 1</h2>
+    <p class="niche">Enterprise web dashboard</p>
+    <div class="frame">Screen recording for project 1
+      <video controls playsinline preload="metadata" src="project1.mp4" onerror="this.hidden=true"></video>
+    </div>
+    <div class="info">
+      <p><b>The problem</b>Write one sentence about the problem you solved.</p>
+      <p><b>What I found</b>Write one key insight from your user research.</p>
+      <p class="meta">Figma · 6 weeks · End-to-end UI/UX designer</p>
+    </div>
+  </section>
+
+  <section class="project">
+    <h2>Project name 2</h2>
+    <p class="niche">FinTech mobile app</p>
+    <div class="frame">Screen recording for project 2
+      <video controls playsinline preload="metadata" src="project2.mp4" onerror="this.hidden=true"></video>
+    </div>
+    <div class="info">
+      <p><b>The problem</b>Write one sentence about the problem you solved.</p>
+      <p><b>What I found</b>Write one key insight from your user research.</p>
+      <p class="meta">Figma · 4 weeks · End-to-end UI/UX designer</p>
+    </div>
+  </section>
+
+  <section class="project">
+    <h2>Project name 3</h2>
+    <p class="niche">Accessible consumer app</p>
+    <div class="frame">Screen recording for project 3
+      <video controls playsinline preload="metadata" src="project3.mp4" onerror="this.hidden=true"></video>
+    </div>
+    <div class="info">
+      <p><b>The problem</b>Write one sentence about the problem you solved.</p>
+      <p><b>What I found</b>Write one key insight from your user research.</p>
+      <p class="meta">Figma · 5 weeks · End-to-end UI/UX designer</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>Contact me</h2>
+    <p>Open to UI/UX roles.</p>
+    <div class="btns">
+      <a class="btn" href="resume.pdf">Download resume</a>
+      <a class="btn alt" href="https://www.linkedin.com/in/your-name" rel="noopener">LinkedIn</a>
+      <button class="btn alt" id="copy" type="button" data-email="you@example.com">Copy email</button>
+    </div>
+    <p id="status" role="status" aria-live="polite">you@example.com</p>
+  </div>
+</footer>
+<script>
+document.getElementById('copy').addEventListener('click',function(){
+  var e=this.dataset.email,s=document.getElementById('status');
+  function ok(){s.textContent='Email copied: '+e}
+  function fail(){s.textContent='Copy failed. Email: '+e}
+  try{navigator.clipboard.writeText(e).then(ok,fail)}catch(x){fail()}
+});
+</script>
+</body>
+</html>
