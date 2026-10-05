@@ -33,11 +33,11 @@ footer p{opacity:.8;margin:8px 0 24px}
 .certs h2{font-size:clamp(1.5rem,4vw,2rem);margin-bottom:16px}
 .cert-grid{display:grid;gap:16px;grid-template-columns:1fr}
 @media(min-width:700px){.cert-grid{grid-template-columns:1fr 1fr}}
-.cert{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.cert img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;background:var(--line)}
-.cert div{padding:14px 16px}
-.cert b{display:block}
-.cert span{color:var(--muted);font-size:.95rem}  
+.cert{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.cert b{display:block;font-size:1.1rem}
+.cert span{color:var(--muted);font-size:.95rem}
+.cert a{align-self:flex-start;display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:10px;border:2px solid var(--accent);color:var(--accent);font-weight:600;text-decoration:none}
+.cert a:hover{background:var(--accent);color:var(--accent-ink)} 
 .btns{display:flex;flex-wrap:wrap;gap:12px}
 .btn{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:10px;font:600 1rem inherit;font-family:inherit;text-decoration:none;border:2px solid var(--bg);background:var(--bg);color:var(--ink);cursor:pointer}
 .btn.alt{background:transparent;color:var(--bg);border-color:rgba(255,255,255,.4)}
@@ -94,12 +94,12 @@ footer p{opacity:.8;margin:8px 0 24px}
   <h2>Certificates</h2>
   <div class="cert-grid">
     <div class="cert">
-      <img src="cert1.jpg" alt="Certificate 1">
-      <div><b>Certificate name</b><span>Issued by · 2026</span></div>
+      <div><b>Introduction to UI-UX</b><span>Issued by · 2026</span></div>
+      <a href="1. introduction to ui-ux.pdf" target="_blank" rel="noopener">View certificate</a>
     </div>
     <div class="cert">
-      <img src="cert2.jpg" alt="Certificate 2">
-      <div><b>Certificate name</b><span>Issued by · 2026</span></div>
+      <div><b>Agile development n srum</b><span>Issued by · 2026</span></div>
+      <a href="2. agile development n srum.pdf" target="_blank" rel="noopener">View certificate</a>
     </div>
   </div>
 </section>
