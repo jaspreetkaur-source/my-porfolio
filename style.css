@@ -130,8 +130,8 @@ gap:25px;padding:15px 19px;font-size:12px;font-weight:700;transition:transform .
     gap: 9px;
 }
 
-.app-button ,
-.cal-button  {
+#app-button ,
+#cal-button  {
     display: inline-block;
     font-size: 20px;
     color: green;
