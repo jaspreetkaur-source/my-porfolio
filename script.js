@@ -24,6 +24,26 @@ filterButtons.forEach(button => {
   });
 });
 
+document.querySelectorAll(".email-copy").forEach(link => {
+  link.addEventListener("click", async function (event) {
+    event.preventDefault();
+
+    const email = this.dataset.email;
+    const message = this.nextElementSibling;
+
+    try {
+      await navigator.clipboard.writeText(email);
+      message.textContent = "Email copied!";
+    } catch (error) {
+      message.textContent = "Email: " + email;
+    }
+
+    setTimeout(() => {
+      message.textContent = "";
+    }, 3000);
+  });
+});
+
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
