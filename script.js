@@ -24,24 +24,39 @@ filterButtons.forEach(button => {
   });
 });
 
-const emailButton = document.getElementById("emailButton");
-const copyMessage = document.getElementById("copyMessage");
+const emailButton = document.getElementById('emailButton');
+const copyMessage = document.getElementById('copyMessage');
 
-emailButton.addEventListener("click", async function (event) {
+emailButton?.addEventListener('click', async function (event) {
   event.preventDefault();
 
   const email = this.dataset.email;
 
-  try {
-    await navigator.clipboard.writeText(email);
-    copyMessage.textContent = "Email copied!";
-  } catch (error) {
-    copyMessage.textContent = "Please copy this email: " + email;
+  if (!email) {
+    if (copyMessage) {
+      copyMessage.textContent = 'Email address is missing.';
+    }
+    return;
   }
 
-  setTimeout(() => {
-    copyMessage.textContent = "";
-  }, 3000);
+  try {
+    await navigator.clipboard.writeText(email);
+
+    if (copyMessage) {
+      copyMessage.textContent = 'Email copied!';
+    } else {
+      alert('Email copied: ' + email);
+    }
+  } catch (error) {
+    // Fallback for browsers that block clipboard access.
+    window.prompt('Copy your email address:', email);
+  }
+
+  if (copyMessage) {
+    setTimeout(() => {
+      copyMessage.textContent = '';
+    }, 3000);
+  }
 });
 
 const revealObserver = new IntersectionObserver(entries => {
