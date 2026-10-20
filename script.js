@@ -59,18 +59,18 @@ filterButtons.forEach(button => {
   //}
 //}); 
 
-const emailButton = document.getElementById('emailButton');
-const copyMessage = document.getElementById('copyMessage');
+//const emailButton = document.getElementById('emailButton');
+//const copyMessage = document.getElementById('copyMessage');
 
-emailButton?.addEventListener('click', function () {
-  if (copyMessage) {
-    copyMessage.textContent = 'Opening Gmail...';
+//emailButton?.addEventListener('click', function () {
+  //if (copyMessage) {
+    //copyMessage.textContent = 'Opening Gmail...';
 
-    setTimeout(() => {
-      copyMessage.textContent = '';
-    }, 3000);
-  }
-});
+    //setTimeout(() => {
+      //copyMessage.textContent = '';
+    //}, 3000);
+  //}
+//});
 
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
