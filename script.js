@@ -24,7 +24,7 @@ filterButtons.forEach(button => {
   });
 });
 
-document.querySelectorAll(".email-copy").forEach(link => {
+document.querySelectorAll("emailButton").forEach(link => {
   link.addEventListener("click", async function (event) {
     event.preventDefault();
 
