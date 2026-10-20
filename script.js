@@ -24,24 +24,24 @@ filterButtons.forEach(button => {
   });
 });
 
-document.querySelectorAll("emailButton").forEach(link => {
-  link.addEventListener("click", async function (event) {
-    event.preventDefault();
+const emailButton = document.getElementById("emailButton");
+const copyMessage = document.getElementById("copyMessage");
 
-    const email = this.dataset.email;
-    const message = this.nextElementSibling;
+emailButton.addEventListener("click", async function (event) {
+  event.preventDefault();
 
-    try {
-      await navigator.clipboard.writeText(email);
-      message.textContent = "Email copied!";
-    } catch (error) {
-      message.textContent = "Email: " + email;
-    }
+  const email = this.dataset.email;
 
-    setTimeout(() => {
-      message.textContent = "";
-    }, 3000);
-  });
+  try {
+    await navigator.clipboard.writeText(email);
+    copyMessage.textContent = "Email copied!";
+  } catch (error) {
+    copyMessage.textContent = "Please copy this email: " + email;
+  }
+
+  setTimeout(() => {
+    copyMessage.textContent = "";
+  }, 3000);
 });
 
 const revealObserver = new IntersectionObserver(entries => {
