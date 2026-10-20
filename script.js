@@ -24,35 +24,48 @@ filterButtons.forEach(button => {
   });
 });
 
+//const emailButton = document.getElementById('emailButton');
+//const copyMessage = document.getElementById('copyMessage');
+
+//emailButton?.addEventListener('click', async function (event) {
+  //event.preventDefault();
+
+  //const email = this.dataset.email;
+
+  //if (!email) {
+    //if (copyMessage) {
+      //copyMessage.textContent = 'Email address is missing.';
+    //}
+    //return;
+  //}
+
+  //try {
+    //await navigator.clipboard.writeText(email);
+
+    //if (copyMessage) {
+      //copyMessage.textContent = 'Email copied!';
+    //} else {
+      //alert('Email copied: ' + email);
+    //}
+  //} catch (error) {
+    // Fallback for browsers that block clipboard access.
+    //window.prompt('Copy your email address:', email);
+  //}
+
+  //if (copyMessage) {
+    //setTimeout(() => {
+      //copyMessage.textContent = '';
+    //}, 3000);
+  //}
+//}); 
+
 const emailButton = document.getElementById('emailButton');
 const copyMessage = document.getElementById('copyMessage');
 
-emailButton?.addEventListener('click', async function (event) {
-  event.preventDefault();
-
-  const email = this.dataset.email;
-
-  if (!email) {
-    if (copyMessage) {
-      copyMessage.textContent = 'Email address is missing.';
-    }
-    return;
-  }
-
-  try {
-    await navigator.clipboard.writeText(email);
-
-    if (copyMessage) {
-      copyMessage.textContent = 'Email copied!';
-    } else {
-      alert('Email copied: ' + email);
-    }
-  } catch (error) {
-    // Fallback for browsers that block clipboard access.
-    window.prompt('Copy your email address:', email);
-  }
-
+emailButton?.addEventListener('click', function () {
   if (copyMessage) {
+    copyMessage.textContent = 'Opening Gmail...';
+
     setTimeout(() => {
       copyMessage.textContent = '';
     }, 3000);
