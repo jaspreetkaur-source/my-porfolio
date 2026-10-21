@@ -222,6 +222,9 @@ animation:float 7s ease-in-out infinite}
 .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px 24px}.project-card{min-width:0;transition:opacity .25s,transform .25s}.project-card.hidden{display:none}
 .project-visual{height:380px;display:block;position:relative;overflow:hidden;isolation:isolate;transition:transform .35s}
 .project-large{height:352px}
+.visual-meet {
+    height: 353px;
+}
 .project-visual:hover .visual-open{opacity:1;transform:translateY(0)}
 .visual-open{position:absolute;right:17px;bottom:17px;background:var(--white);padding:11px 14px;font-size:10px;font-weight:700;opacity:0;transform:translateY(7px);transition:all .25s;z-index:5}
 .project-info{display:flex;justify-content:space-between;gap:15px;padding-top:19px}.project-type{font-size:9px;font-weight:700;letter-spacing:1.5px;color:#82877e;margin:0 0 8px}
