@@ -144,6 +144,43 @@ gap:25px;padding:15px 19px;font-size:12px;font-weight:700;transition:transform .
     line-height: 1;
 }
 
+
+/* Fix Ride It video preview size */
+.project-visual.visual-ride {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #111;
+}
+
+.project-visual.visual-ride .project-preview-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    background: #111;
+    border: 0;
+}
+
+/* Project link overlay */
+.project-visual.visual-ride .visual-open {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.project-visual.visual-ride:hover .visual-open {
+    opacity: 1;
+}
+
+
 animation:float 7s ease-in-out infinite} 
 .art-orbit{position:absolute;border:1px solid rgba(29,37,35,.3);border-radius:50%;transform:rotate(-28deg)}.orbit-one{width:390px;height:140px;top:44%;left:5%}
 .orbit-two{width:360px;height:110px;top:46%;left:8%;transform:rotate(52deg)}.art-card{position:absolute;background:var(--white);box-shadow:0 14px 35px #4b34251c}
