@@ -220,7 +220,8 @@ animation:float 7s ease-in-out infinite}
 .filter-chip{border:1px solid var(--line);background:transparent;color:#626a61;padding:10px 15px;border-radius:30px;font-size:11px;cursor:pointer;transition:all .2s}
 .filter-chip span{font-size:9px;margin-left:9px;opacity:.65}.filter-chip.active,.filter-chip:hover{background:var(--ink);color:white;border-color:var(--ink)}
 .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px 24px}.project-card{min-width:0;transition:opacity .25s,transform .25s}.project-card.hidden{display:none}
-.project-visual{height:380px;display:block;position:relative;overflow:hidden;isolation:isolate;transition:transform .35s}.project-large .project-visual{height:410px}
+.project-visual{height:380px;display:block;position:relative;overflow:hidden;isolation:isolate;transition:transform .35s}
+.project-large{height:352px}
 .project-visual:hover .visual-open{opacity:1;transform:translateY(0)}
 .visual-open{position:absolute;right:17px;bottom:17px;background:var(--white);padding:11px 14px;font-size:10px;font-weight:700;opacity:0;transform:translateY(7px);transition:all .25s;z-index:5}
 .project-info{display:flex;justify-content:space-between;gap:15px;padding-top:19px}.project-type{font-size:9px;font-weight:700;letter-spacing:1.5px;color:#82877e;margin:0 0 8px}
