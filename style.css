@@ -189,6 +189,16 @@ gap:25px;padding:15px 19px;font-size:12px;font-weight:700;transition:transform .
     object-position: center;
 }
 
+.project-preview-video2 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    background: #111;
+    border: 0;
+}
+
 
 animation:float 7s ease-in-out infinite} 
 .art-orbit{position:absolute;border:1px solid rgba(29,37,35,.3);border-radius:50%;transform:rotate(-28deg)}.orbit-one{width:390px;height:140px;top:44%;left:5%}
@@ -210,7 +220,7 @@ animation:float 7s ease-in-out infinite}
 .filter-chip{border:1px solid var(--line);background:transparent;color:#626a61;padding:10px 15px;border-radius:30px;font-size:11px;cursor:pointer;transition:all .2s}
 .filter-chip span{font-size:9px;margin-left:9px;opacity:.65}.filter-chip.active,.filter-chip:hover{background:var(--ink);color:white;border-color:var(--ink)}
 .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px 24px}.project-card{min-width:0;transition:opacity .25s,transform .25s}.project-card.hidden{display:none}
-.project-visual{height:340px;display:block;position:relative;overflow:hidden;isolation:isolate;transition:transform .35s}.project-large .project-visual{height:410px}
+.project-visual{height:380px;display:block;position:relative;overflow:hidden;isolation:isolate;transition:transform .35s}.project-large .project-visual{height:410px}
 .project-visual:hover .visual-open{opacity:1;transform:translateY(0)}
 .visual-open{position:absolute;right:17px;bottom:17px;background:var(--white);padding:11px 14px;font-size:10px;font-weight:700;opacity:0;transform:translateY(7px);transition:all .25s;z-index:5}
 .project-info{display:flex;justify-content:space-between;gap:15px;padding-top:19px}.project-type{font-size:9px;font-weight:700;letter-spacing:1.5px;color:#82877e;margin:0 0 8px}
@@ -242,7 +252,13 @@ background-image:linear-gradient(35deg,transparent 45%,#b8c9b2 46% 48%,transpare
 .route-line{position:absolute;left:30px;top:35px;width:62px;border-top:2px dashed #e45d46;transform:rotate(35deg)}.ride-bottom{margin-top:12px}
 .ride-bottom small{font-size:6px;letter-spacing:.8px;color:#7a8276}.ride-bottom b{display:block;font-size:9px;margin:4px 0 8px}
 .ride-bottom span{display:block;background:#263b31;color:white;text-align:center;padding:8px 2px;font-size:7px}
-.visual-home{background:#e9dfd0;padding:23px 26px;color:#28332d}.home-top{display:flex;justify-content:space-between;font-size:7px;letter-spacing:1px;font-weight:700}
+.visual-home {
+    background: black;
+    padding: 12px 12px;
+    color: #28332d;
+    border-radius: 25px;
+}
+.home-top{display:flex;justify-content:space-between;font-size:7px;letter-spacing:1px;font-weight:700}
 .home-title{font:800 27px/1.1 var(--display);letter-spacing:-1.5px;margin-top:28px;position:relative;z-index:2}
 .home-title i{font-family:Georgia,serif;color:#8b604a;font-weight:400}.furniture-scene{height:170px;position:absolute;bottom:30px;left:25px;right:25px;overflow:hidden}
 .sun-shape{position:absolute;width:140px;height:140px;border-radius:50%;background:#d9b28e;right:30px;top:0}.plant{position:absolute;left:40px;bottom:32px;width:50px;height:100px;z-index:2}
