@@ -234,6 +234,34 @@ gap:25px;padding:15px 19px;font-size:12px;font-weight:700;transition:transform .
 }
 
 
+.outcome-media {
+  width: 100%;
+  margin-top: 24px;
+  overflow: hidden;
+  border: 1px solid #ded8cc;
+  border-radius: 16px;
+  background: #f7f4ed;
+}
+
+.outcome-media img,
+.outcome-media video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 750px;
+  object-fit: contain;
+}
+
+.outcome-media video {
+  background: #171717;
+}
+
+@media (max-width: 600px) {
+  .outcome-media {
+    border-radius: 10px;
+  }
+}
+
 animation:float 7s ease-in-out infinite} 
 .art-orbit{position:absolute;border:1px solid rgba(29,37,35,.3);border-radius:50%;transform:rotate(-28deg)}.orbit-one{width:390px;height:140px;top:44%;left:5%}
 .orbit-two{width:360px;height:110px;top:46%;left:8%;transform:rotate(52deg)}.art-card{position:absolute;background:var(--white);box-shadow:0 14px 35px #4b34251c}
