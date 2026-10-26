@@ -115,33 +115,32 @@ const projects = {
                     reflection:"Share what the explorations helped you learn or what you would try next."}
 };
 
+  
+const id = new URLSearchParams(location.search).get('id') || 'meet-website';
+const p = projects[id] || projects['meet-website'];
 
 const outcomeMedia = document.getElementById("outcomeMedia");
 
 if (outcomeMedia) {
   outcomeMedia.replaceChildren();
 
-  if (project.outcomeVideo) {
+  if (p.outcomeVideo) {
     const video = document.createElement("video");
-    video.src = project.outcomeVideo;
+    video.src = p.outcomeVideo;
     video.controls = true;
     video.playsInline = true;
     video.preload = "metadata";
-    video.setAttribute("aria-label", project.title + " outcome video");
-
+    video.setAttribute("aria-label", p.title + " outcome video");
     outcomeMedia.appendChild(video);
-  } else if (project.outcomeImage) {
+  } else if (p.outcomeImage) {
     const image = document.createElement("img");
-    image.src = project.outcomeImage;
-    image.alt = project.title + " final design outcome";
+    image.src = p.outcomeImage;
+    image.alt = p.title + " final design outcome";
     image.loading = "lazy";
-
     outcomeMedia.appendChild(image);
   }
 }
   
-const id = new URLSearchParams(location.search).get('id') || 'meet-website';
-const p = projects[id] || projects['meet-website'];
 const put = (key, value) => { const el=document.getElementById(key); if(el) el.innerHTML=value; };
 put('caseKicker',p.kicker); put('caseTitle',p.title.replace(' — ',' —<br><em>') + (p.title.includes('—') ? '</em>' : '')); 
 if(!p.title.includes('—')) document.getElementById('caseTitle').innerHTML=p.title.replace(/(App|Furnitures|Collection)$/,'<em>$1</em>');
