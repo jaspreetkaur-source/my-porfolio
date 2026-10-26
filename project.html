@@ -44,11 +44,12 @@
     </div>
     <div class="case-block"><p class="eyebrow">02 / THE SOLUTION</p><h2>A clearer experience.</h2>
       <figure class="approach-diagram">
-        <img
-          src="snap1.JPG"
+       <!-- <img id="outcomeImage" 
+          src="" 
           alt="UX process diagram showing user flow, wireframing, and design iterations"
           loading="lazy"
-        >
+        > -->
+        <div id="outcomeMedia" class="outcome-media"></div>
       <figcaption>This is the Outcome.</figcaption>
       </figure>
      <!-- <p id="caseSolution">Show your final screens and explain how the design choices help users. Replace this text with the real outcome and any feedback or results you can share.</p><div class="case-placeholder">
@@ -61,11 +62,84 @@
 <footer class="site-footer section-wrap"><a class="brand" href="index.html"><span class="brand-mark">J</span><span>jaspreet<span class="brand-dot">.</span></span></a><p>Designed with intention by Jaspreet Kaur</p><a href="#">Back to top ↑</a><span>© <span id="year"></span></span></footer>
 <script>
 const projects = {
-  "meet-website": {kicker:"CASE STUDY / WEB DESIGN",title:"Meet Website — Mini Account",intro:"A web experience concept focused on making account-related tasks feel clear, friendly, and easy to navigate.",role:"UI/UX Designer",type:"Website",tools:"Figma · Edit tools",year:"2026",cover:"Meet Website",challenge:"Describe the actual problem and audience for your Meet Website project. What did people need to do, and what was difficult or confusing?",approach:"Add the real work you completed: discovery, user flows, wireframes, visual direction, components, and the reasons behind your decisions.",solution:"Add your actual final screens and explain how they answer the original problem. Include screenshots and a prototype link if you have one.",reflection:"Add what you learned and what you would improve if you had more time."},
-  "ride-it-app": {kicker:"CASE STUDY / MOBILE APP",title:"Ride It App",intro:"A mobile app concept with a focus on making the ride journey simple, readable, and reassuring.",role:"UI/UX Designer",type:"Mobile app",tools:"Figma · Edit tools",year:"2026",cover:"Ride It App",challenge:"Describe the actual rider needs and the key journey your app is designed to support.",approach:"Document the real user flow, navigation choices, wireframes, and design iterations you made.",solution:"Add your final app screens and explain how they help someone complete the main task.",reflection:"Share your biggest design learning and the next improvement you would make."},
-  "modern-home": {kicker:"CASE STUDY / E-COMMERCE",title:"Modern Home Furnitures",intro:"A modern furniture shopping experience with an editorial feel and a focus on product discovery.",role:"UI/UX Designer",type:"E-commerce website",tools:"Figma · Edit tools",year:"2026",cover:"Modern Home<br>Furnitures",challenge:"Describe the customer, shopping problem, and goals for the furniture experience.",approach:"Explain how you organised categories, product information, navigation, and the purchase journey.",solution:"Add your actual pages and show how your design helps people explore products and make decisions.",reflection:"Describe what you learned about e-commerce, hierarchy, or product presentation."},
-  "visual-design": {kicker:"CASE STUDY / VISUAL DESIGN",title:"Visual Design Collection",intro:"A place to showcase visual explorations, interface details, and other design work you want recruiters to see.",role:"Designer",type:"Visual design",tools:"Add your tools",year:"2026",cover:"Visual Design<br>Collection",challenge:"Replace this with the real brief or purpose of the work you are showcasing.",approach:"Explain the visual direction, references, experiments, and iterations that shaped the work.",solution:"Add the real design pieces and explain the choices that make them effective.",reflection:"Share what the explorations helped you learn or what you would try next."}
+  "meet-website": {kicker:"CASE STUDY / WEB DESIGN",
+                   title:"Meet Website — Mini Account",
+                   intro:"A web experience concept focused on making account-related tasks feel clear, friendly, and easy to navigate.",
+                   role:"UI/UX Designer",
+                   type:"Website",
+                   tools:"Figma · Edit tools",
+                   year:"2026",
+                   cover:"Meet Website",
+                   outcomeImage: "snap1.JPG",
+                   challenge:"Describe the actual problem and audience for your Meet Website project. What did people need to do, and what was difficult or confusing?",
+                   approach:"Add the real work you completed: discovery, user flows, wireframes, visual direction, components, and the reasons behind your decisions.",
+                   solution:"Add your actual final screens and explain how they answer the original problem. Include screenshots and a prototype link if you have one.",
+                   reflection:"Add what you learned and what you would improve if you had more time."},
+  "ride-it-app": {kicker:"CASE STUDY / MOBILE APP",
+                  title:"Ride It App",
+                  intro:"A mobile app concept with a focus on making the ride journey simple, readable, and reassuring.",
+                  role:"UI/UX Designer",
+                  type:"Mobile app"
+                  ,tools:"Figma · Edit tools",
+                  year:"2026",
+                  cover:"Ride It App",
+                  outcomeImage: "",
+                  outcomeVideo: "projectvideo2.mp4",
+                  challenge:"Describe the actual rider needs and the key journey your app is designed to support.",
+                  approach:"Document the real user flow, navigation choices, wireframes, and design iterations you made.",
+                  solution:"Add your final app screens and explain how they help someone complete the main task.",
+                  reflection:"Share your biggest design learning and the next improvement you would make."},
+  "modern-home": {kicker:"CASE STUDY / E-COMMERCE",
+                  title:"Modern Home Furnitures",
+                  intro:"A modern furniture shopping experience with an editorial feel and a focus on product discovery.",
+                  role:"UI/UX Designer",
+                  type:"E-commerce website",
+                  tools:"Figma · Edit tools",
+                  year:"2026",
+                  cover:"Modern Home<br>Furnitures",
+                  challenge:"Describe the customer, shopping problem, and goals for the furniture experience.",
+                  approach:"Explain how you organised categories, product information, navigation, and the purchase journey.",
+                  solution:"Add your actual pages and show how your design helps people explore products and make decisions.",
+                  reflection:"Describe what you learned about e-commerce, hierarchy, or product presentation."},
+  "visual-design": {kicker:"CASE STUDY / VISUAL DESIGN",
+                    title:"Visual Design Collection",
+                    intro:"A place to showcase visual explorations, interface details, and other design work you want recruiters to see.",
+                    role:"Designer",
+                    type:"Visual design",
+                    tools:"Add your tools",
+                    year:"2026",
+                    cover:"Visual Design<br>Collection",
+                    challenge:"Replace this with the real brief or purpose of the work you are showcasing.",
+                    approach:"Explain the visual direction, references, experiments, and iterations that shaped the work.",
+                    solution:"Add the real design pieces and explain the choices that make them effective.",
+                    reflection:"Share what the explorations helped you learn or what you would try next."}
 };
+
+
+const outcomeMedia = document.getElementById("outcomeMedia");
+
+if (outcomeMedia) {
+  outcomeMedia.replaceChildren();
+
+  if (project.outcomeVideo) {
+    const video = document.createElement("video");
+    video.src = project.outcomeVideo;
+    video.controls = true;
+    video.playsInline = true;
+    video.preload = "metadata";
+    video.setAttribute("aria-label", project.title + " outcome video");
+
+    outcomeMedia.appendChild(video);
+  } else if (project.outcomeImage) {
+    const image = document.createElement("img");
+    image.src = project.outcomeImage;
+    image.alt = project.title + " final design outcome";
+    image.loading = "lazy";
+
+    outcomeMedia.appendChild(image);
+  }
+}
+  
 const id = new URLSearchParams(location.search).get('id') || 'meet-website';
 const p = projects[id] || projects['meet-website'];
 const put = (key, value) => { const el=document.getElementById(key); if(el) el.innerHTML=value; };
