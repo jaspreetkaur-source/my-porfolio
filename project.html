@@ -119,27 +119,41 @@ const projects = {
 const id = new URLSearchParams(location.search).get('id') || 'meet-website';
 const p = projects[id] || projects['meet-website'];
 
+
 const outcomeMedia = document.getElementById("outcomeMedia");
 
 if (outcomeMedia) {
-  outcomeMedia.replaceChildren();
+  outcomeMedia.innerHTML = "";
 
   if (p.outcomeVideo) {
     const video = document.createElement("video");
-    video.src = p.outcomeVideo;
-    video.controls = true;
-    video.playsInline = true;
-    video.preload = "metadata";
-    video.setAttribute("aria-label", p.title + " outcome video");
+
+    video.setAttribute("controls", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("preload", "metadata");
+    video.style.display = "block";
+    video.style.width = "100%";
+    video.style.height = "auto";
+
+    const source = document.createElement("source");
+    source.src = p.outcomeVideo;
+    source.type = "video/mp4";
+
+    video.appendChild(source);
     outcomeMedia.appendChild(video);
   } else if (p.outcomeImage) {
     const image = document.createElement("img");
     image.src = p.outcomeImage;
     image.alt = p.title + " final design outcome";
     image.loading = "lazy";
+    image.style.display = "block";
+    image.style.width = "100%";
+    image.style.height = "auto";
+
     outcomeMedia.appendChild(image);
   }
 }
+
   
 const put = (key, value) => { const el=document.getElementById(key); if(el) el.innerHTML=value; };
 put('caseKicker',p.kicker); put('caseTitle',p.title.replace(' — ',' —<br><em>') + (p.title.includes('—') ? '</em>' : '')); 
